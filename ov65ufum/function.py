@@ -13,4 +13,6 @@ def imshow(X, resize=None):
     image = Image.fromarray(X)
     image = image.resize(resize)
     
+    interact(imshow)
+    
     return image
