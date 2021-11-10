@@ -1,6 +1,7 @@
 import numpy as np
 from ipywidgets import interact, fixed
 from PIL import Image
+import matplotlib.pyplot as plt
 
 def imshow(X, resize=None):
     """
@@ -13,6 +14,8 @@ def imshow(X, resize=None):
     image = Image.fromarray(X)
     image = image.resize(resize)
     
-    interact(imshow)
+    plt.figure()
+    plt.imshow(image)
+    plt.show()
     
     return image
