@@ -4,18 +4,25 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 def imshow(X, resize=None):
+    """Plots an image of resized size if argument is given.
+
+    Parameters
+    ----------
+    X : numpy.array
+        Image as numpy array..
+    resize : tuple, optional
+        Resize size (width, height).
+        
+    Returns
+    -------
+    PIL.Image
+        Resized image as Pillow Image object.
     """
-    You should create a way to resize an image from an array X.
-    The use of widgets is optional but you can take a look to interact.
-    We should be able to install this package in Google Colab from your Git
-    repo.
-    """
     
-    image = Image.fromarray(X)
-    image = image.resize(resize)
+    X = Image.fromarray(np.uint8(X))
+    if resize != None:
+        X = X.resize(resize)
     
-    plt.figure()
-    plt.imshow(image)
-    plt.show()
+    plt.figure(), plt.imshow(X), plt.show()
     
-    return image
+    return X
